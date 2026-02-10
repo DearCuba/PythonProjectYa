@@ -14,20 +14,40 @@ ax2+bx+c=0
 
 Примечание
 Обратите внимание: ограничения на значения коэффициентов отсутствуют.
+Анализ дискриминанта. Определите количество корней:
+если D<0, то корней нет;
+если D=0, то есть один корень;
+если D>0, то есть два корня;
 """
 
-# вводим три вещественных числа
-a = float(1)
-b = float(-2)
-c = float(1)
-# a = 1, b = -2, c = 1
-# x = 1.00
+a = float(0)
+b = float(3)
+c = float(-3)
+x_1 = float(0)
+x_2 = float(0)
+discriminant = int(0)
 
-# проверяем чтобы старший коэффициент не равнялся нулю, так как в противном случае уравнение будет линейным
-if a == 0:
-    x = -c / b
-    print(f"Старший коэффициент равен нулю.\nУравнение является линейным.\nx = {x:.2f}")
+if a == 0 and b == 0 and c == 0:    #Если a == 0 b == 0 c == 0
+    print("Infinite solutions")
+elif a == 0 and b == 0 and c != 0:  #Если a == 0 b == 0 buy c != 0
+    print("No solution")
+elif a == 0 and b != 0 and c != 0:  #Если a == b != 0 c != 0
+    x_1 = -(c / b)
+    print(f"{x_1:.2f}")
+elif a != 0 and b == 0 and c == 0:  #Если a != b == 0 c == 0
+    x1 = 0
+    print(f"{x_1:.2f}")
 else:
-    # вычисляем дискриминант
     discriminant = b ** 2 - 4 * a * c
-    print(f"Discriminant = {discriminant:.0f}")
+    if discriminant == 0:
+        x_1 = -b / (2 * a)
+        print(f"{x_1:.2f}")
+    elif discriminant > 0:
+        x_1 = (-b + (discriminant ** 0.5)) / (2 * a)
+        x_2 = (-b - (discriminant ** 0.5)) / (2 * a)
+        if x_1 > x_2:
+            print(f"{x_2:.2f} {x_1:.2f}")
+        else:
+            print(f"{x_1:.2f} {x_2:.2f}")
+    else:
+        print("No solution")
