@@ -16,16 +16,23 @@
 Строка в которой есть зайка, а затем её длина.
 Если таких строк несколько, выбрать ту, что меньше всех лексикографически.
 """
-word = "зайка"
-string_1 = "березка елочка зайка волк березка"
-string_2 = "сосна сосна сосна елочка грибочки медведь"
-string_3 = "березка елочка зайка волк березка2"
+
+string_1 = "зайка березка"
+string_2 = "березка зайка"
+string_3 = "березка елочка березка"
+
+word = 'зайка'
+result = ""
 
 if word in string_1:
-    print(string_1, len(string_1))
+    result = string_1
 
-if word in string_2:
-    print(string_2, len(string_2))
+if "зайка" in string_2:
+    if result == "" or string_2 < result:
+        result = string_2
 
-if word in string_3:
-    print(string_3, len(string_3))
+if "зайка" in string_3:
+    if result == "" or string_3 < result:
+        result = string_3
+
+print(result, len(result))
