@@ -7,19 +7,23 @@
 Вам нужно разработать программу для кассового автомата, которая считает итоговую сумму покупки с учётом скидки.
 
 Формат ввода
-Вводится некоторое количество неотрицательных рациональных чисел - стоимость товаров.
+Вводится, некоторое количество неотрицательных рациональных чисел - стоимость товаров.
 Список завершается значением 0.
 
 Формат вывода
-Требуется вывести сумму всех товаров с учетом объявленной акции.
+Требуется, вывести сумму всех товаров с учетом объявленной акции.
 """
 
 product_price = float(input())
 total_product_cost = float(0)
+discount = 0.9
 
 while product_price != 0:
-    total_product_cost += product_price
-    product_price = float(input())
+    if product_price >= 500:
+        total_product_cost += product_price * discount
+        product_price = float(input())
+    else:
+        total_product_cost += product_price
+        product_price = float(input())
 
 print(total_product_cost)
-
