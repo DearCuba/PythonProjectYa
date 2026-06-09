@@ -15,3 +15,10 @@
 Самый распространенный способ поиска НОД – Алгоритм Евклида.
 """
 
+number_one = abs(int(input()))
+number_two = abs(int(input()))
+
+while number_two != 0:
+    number_one, number_two = number_two, number_one % number_two
+
+print(number_one)
