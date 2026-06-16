@@ -10,11 +10,27 @@
 Формат вывода
 Требуется вывести одно натуральное число – НОК двух данных чисел.
 """
+# Принимаем два числа и объявляем НОД
+number_one = abs(int(512))
+number_two = abs(int(625))
 
-number_one = abs(int(input()))
-number_two = abs(int(input()))
+# Проверяем на ноль
+if number_one == 0 or number_two == 0:
+    nok = 0
+    print(f"NOK = {nok}")
+else:
+    # Создаем копии оригинальных чисел для вычисления НОД
+    a = number_one
+    b = number_two
 
-while number_two != 0:
-    number_one, number_two = number_two, number_one % number_two
+    # Определяем НОД двух принятых чисел
+    while b != 0:
+        a, b = b, a % b
+    nod = a
+    print(f"NOD = {nod}")
 
-print(number_one)
+
+    # Определяем НОК двух принятых чисел
+    nok = (number_one * number_two) // nod
+    print(f"NOK = {nok}")
+    print(nok)
