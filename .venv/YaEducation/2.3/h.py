@@ -12,3 +12,12 @@
 Формат вывода
 N раз повторенная весьма полезная информация
 """
+
+# Принимаем важную информацию и количество повторений
+useful_information = input()
+count = abs(int(input()))
+
+# Цикл для вывода информации необходимое количество раз
+if count > 0:
+    for i in range(count):
+        print(useful_information)
