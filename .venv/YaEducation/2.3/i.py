@@ -16,3 +16,17 @@
 Примечания
 Факториал нуля принят равным 1.
 """
+from math import factorial
+
+# Принимаем число
+number = abs(int(5))
+
+# Вычисляем факториал с проверкой на 0
+if number > 0:
+    for i in range(number):
+        factorial = number * i
+        print(factorial)
+else:
+    factorial = 1
+
+# Выводим полученное значение
