@@ -19,14 +19,15 @@
 from math import factorial
 
 # Принимаем число
-number = abs(int(5))
+number = int(input())
 
 # Вычисляем факториал с проверкой на 0
 if number > 0:
-    for i in range(number):
-        factorial = number * i
-        print(factorial)
+    factorial = 1
+    for i in range(2, number + 1):
+        factorial *= i
 else:
     factorial = 1
 
 # Выводим полученное значение
+print(factorial)
