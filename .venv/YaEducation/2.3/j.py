@@ -24,21 +24,19 @@
 """
 x = 0
 y = 0
-steps_number = 0
 
 while (direction := input()) != "СТОП":
+    # Проверяем, что направление валидное, прежде чем читать шаги
+    if direction in ("СЕВЕР", "ЮГ", "ВОСТОК", "ЗАПАД"):
+        steps = int(input())
 
-    if direction == "СЕВЕР":
-        steps_number = int(input())
-        x += steps_number
-    elif direction == "ЮГ":
-        steps_number = int(input())
-        x -= steps_number
-    elif direction == "ВОСТОК":
-        steps_number = int(input())
-        y += steps_number
-    elif direction == "ЗАПАД":
-        steps_number = int(input())
-        y -= steps_number
+        if direction == "СЕВЕР":
+            x += steps
+        elif direction == "ЮГ":
+            x -= steps
+        elif direction == "ВОСТОК":
+            y += steps
+        elif direction == "ЗАПАД":
+            y -= steps
 
 print(f"{x}\n{y}")
